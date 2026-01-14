@@ -1,0 +1,8 @@
+<Project>
+    <PropertyGroup>
+        <GeneratePackageOnBuild Condition="'$(IsPackeable)' == 'true'">true</GeneratePackageOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Condition="'$(IsPackeable)' == 'true'" Include="DotNet.ReproducibleBuilds"/>
+    </ItemGroup>
+</Project>

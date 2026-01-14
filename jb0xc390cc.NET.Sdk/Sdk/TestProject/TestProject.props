@@ -1,0 +1,19 @@
+<Project>
+    <PropertyGroup>
+        <IsPackable Condition="'$(IsTestProject)' != 'true'">false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Condition="'$(IsTestProject)' == 'true'" Include="AwesomeAssertions"/>
+        <PackageReference Condition="'$(IsTestProject)' == 'true'" Include="Microsoft.NET.Test.Sdk"/>
+        <PackageReference Condition="'$(IsTestProject)' == 'true'" Include="Microsoft.NET.Test.Sdk"/>
+        <PackageReference Condition="'$(IsTestProject)' == 'true'" Include="NUnit"/>
+        <PackageReference Condition="'$(IsTestProject)' == 'true'" Include="NUnit.Analyzers">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Condition="'$(IsTestProject)' == 'true'" Include="NUnit3TestAdapter"/>
+
+
+    </ItemGroup>
+</Project>

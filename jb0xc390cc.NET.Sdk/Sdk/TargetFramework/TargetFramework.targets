@@ -1,0 +1,19 @@
+<Project>
+    <PropertyGroup>
+        <!--Set target framework verison centrally. If the project must be highly compatible with the most possible 
+        consuming projects then it must target netstandard2.0 -->
+        <TargetFramework Condition="'$(HighlyCompatible)' != 'true'">$(DefaultTargetFramework)</TargetFramework>
+        <TargetFramework Condition="'$(HighlyCompatible)' == 'true'">$(CompatibleTargetFramework)</TargetFramework>
+
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Because all projects targets a moder C# language version (at the time I'm  writing this C#13), but some of
+        them are only target netstandard2.0 this can lead to some missing features from modern C# versions and so the
+        polysharp package mostly solves this -->
+        <PackageReference Condition="'$(HighlyCompatible)' == 'true'" Include="PolySharp">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+</Project>

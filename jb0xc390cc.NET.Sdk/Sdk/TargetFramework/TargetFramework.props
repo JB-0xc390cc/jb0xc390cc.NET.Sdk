@@ -1,0 +1,9 @@
+<Project>
+    <PropertyGroup>
+        <!-- This framework will be used as a TarrgetFrameWork for all projects by default-->
+        <DefaultTargetFramework>net10.0</DefaultTargetFramework>
+        <!-- If a project sets the HighlyCompatible property to true then the framework version 
+             provided by this property will be used as a TargetFrameWork -->
+        <CompatibleTargetFramework>netstandard2.0</CompatibleTargetFramework>
+    </PropertyGroup>
+</Project>

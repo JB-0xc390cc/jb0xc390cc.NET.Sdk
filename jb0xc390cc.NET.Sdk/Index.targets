@@ -1,0 +1,34 @@
+<Project>
+    <!-- This will import the users Directory.Build.props first, then the users .csproj file
+    -->
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+
+    <!-- STEP 1: CALCULATE VERSIONS (The "Smart" Logic) -->
+    <PropertyGroup>
+        <!-- 
+           Pattern: 
+           1. Check if the User already manually set a specific version property (e.g. <XUnitVersion>).
+           2. If not, check your flags (HighlyCompatible).
+           3. If neither, use your default.
+        -->
+
+        <!-- Logic for xUnit -->
+        <MySdkXunitVersion Condition="'$(MySdkXunitVersion)' == '' and '$(HighlyCompatible)' == 'true'">1.0.0</MySdkXunitVersion>
+        <MySdkXunitVersion Condition="'$(MySdkXunitVersion)' == ''">2.6.2</MySdkXunitVersion>
+
+        <!-- Logic for PolySharp -->
+        <MySdkPolyVersion Condition="'$(MySdkPolyVersion)' == ''">1.14.1</MySdkPolyVersion>
+    </PropertyGroup>
+
+    <!-- STEP 2: APPLY TO CPM (The Implementation) -->
+    <ItemGroup>
+        <!-- We use 'Update' so we don't accidentally force-include packages the user doesn't want.
+             We plug in the VARIABLE calculated above. -->
+        <PackageVersion Update="xunit" Version="$(MySdkXunitVersion)"/>
+        <PackageVersion Update="PolySharp" Version="$(MySdkPolyVersion)"/>
+    </ItemGroup>
+
+</Project>
+
+  
+  
