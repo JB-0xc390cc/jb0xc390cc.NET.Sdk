@@ -1,0 +1,23 @@
+# For general .NET project
+**/bin/*
+**/obj/*
+
+# For jetbrains ides
+**/.idea/*
+
+# For ReSharper
+*.sln.DotSettings.user
+
+# For VisualStudio
+**/.vs/*
+
+# For vim undo/bakup files
+*~
+
+# For vim swap files
+*.swp
+*.swo
+*.swn
+
+# Ignore the artifacts directory
+**/artifacts/*
