@@ -1,0 +1,6 @@
+<Project>
+    <Import Project="Index.targets" Condition="'$(HasLocalSdk)' == 'false'"/>
+</Project>
+
+  
+  

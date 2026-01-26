@@ -1,7 +1,8 @@
 <Project>
     <!-- This will import the users Directory.Build.props first, then the users .csproj file
     -->
-    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+
+    <Import Project="TargetFramework/TargetFramework.targets"/>
 
     <!-- STEP 1: CALCULATE VERSIONS (The "Smart" Logic) -->
     <PropertyGroup>
@@ -27,6 +28,10 @@
         <PackageVersion Update="xunit" Version="$(MySdkXunitVersion)"/>
         <PackageVersion Update="PolySharp" Version="$(MySdkPolyVersion)"/>
     </ItemGroup>
+
+
+    <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk"/>
+
 
 </Project>
 

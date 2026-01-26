@@ -1,0 +1,25 @@
+<Project>
+
+    <PropertyGroup>
+        <RepoRoot>$(MSBuildProjectDirectory)</RepoRoot>
+    </PropertyGroup>
+
+    
+
+    <!-- Need to include this before the Microsoft.NET.Sdk, because we should set the 
+   UseArtifactsOutput, before it Microssoft.NET.Sdk is gets imported (normally it would be set in 
+   Directory.build.props)-->
+    <Import Project="Artifact/Artifact.props"/>
+
+
+    <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk"/>
+
+
+    <Import Project="GlobalUsings/GlobalUsings.props"/>
+    <Import Project="Language/Language.props"/>
+    <Import Project="TargetFramework/TargetFramework.props"/>
+    <Import Project="NugetPackage/NugetPackage.props"/>
+    <Import Project="TestProject/TestProject.props"/>
+
+
+</Project>

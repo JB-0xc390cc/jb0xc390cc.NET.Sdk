@@ -1,0 +1,22 @@
+<Project>
+    <!-- Need to include this before the Microsoft.NET.Sdk, because we should set the 
+    useartifactsoutput, before it imported (normally it would be set at Directory.build.props)-->
+
+    <PropertyGroup>
+        
+
+        <jb0xc390cc.net.sdkLocalPath>$([MSBuild]::GetPathOfFileAbove('.mycorp-sdk/Index.props',
+            $(MSBuildProjectDirectory))
+            )
+        </jb0xc390cc.net.sdkLocalPath>
+
+        
+        <HasLocalSdk>false</HasLocalSdk>
+        <HasLocalSdk Condition=" '$(jb0xc390cc.net.sdkLocalPath)' != '' ">true</HasLocalSdk>
+        
+    </PropertyGroup>
+
+
+    <Import Project="Index.props" Condition="'$(HasLocalSdk)' == 'false'"/>
+
+</Project>
