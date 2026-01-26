@@ -2,6 +2,6 @@
   <Folder Name="/docs/">
     <File Path="README.md" />
   </Folder>
-  <Project Path="jb0xc390cc.NET.Sdk.Tool\jb0xc390cc.NET.Sdk.Tool.csproj" Type="Classic C#" />
-  <Project Path="jb0xc390cc.NET.Sdk/jb0xc390cc.NET.Sdk.csproj" Type="Classic C#" />
+  <Project Path="jb0xc390cc.NET.Sdk.Tool\jb0xc390cc.NET.Sdk.Tool.csproj" Type="C#" />
+  <Project Path="jb0xc390cc.NET.Sdk/jb0xc390cc.NET.Sdk.csproj" Type="C#" />
 </Solution>
